@@ -18,7 +18,6 @@
         "ts-lint": "tslint -p tsconfig.json"
     },
     "dependencies": {
-        "@types/node": "^6.0.92",
         "axios": "^0.18.0"
     },
     "devDependencies": {
