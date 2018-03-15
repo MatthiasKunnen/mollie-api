@@ -1,0 +1,2 @@
+declare module 'mollie-api' {
+}

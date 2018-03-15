@@ -1,0 +1,29 @@
+{
+    "name": "mollie-api",
+    "version": "1.0.0",
+    "description": "A promise based wrapper around the Mollie API written in TypeScript",
+    "author": "Matthias Kunnen",
+    "main": "dist/index.js",
+    "types": "index.d.ts",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MatthiasKunnen/mollie-api.git"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "build-prod": "tsc -p tsconfig.production.json",
+        "precommit": "npm run ts-lint",
+        "prepublishOnly": "npm run build-prod",
+        "ts-lint": "tslint -p tsconfig.json"
+    },
+    "dependencies": {
+        "@types/node": "^6.0.92",
+        "axios": "^0.18.0"
+    },
+    "devDependencies": {
+        "husky": "^0.14.3",
+        "tslint": "^5.9.1",
+        "typescript": "^2.7.2"
+    }
+}
