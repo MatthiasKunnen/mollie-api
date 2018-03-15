@@ -312,6 +312,6 @@ declare module 'mollie-api' {
     export type Status =
         'pending' | 'active' | 'cancelled' | 'suspended' | 'completed';
     export interface Metadata {
-        [k: string]: string;
+        [k: string]: any;
     }
 }
