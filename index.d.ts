@@ -1,5 +1,3 @@
-import { AxiosInstance, AxiosPromise } from 'axios';
-
 declare module 'mollie-api' {
     import { AxiosInstance, AxiosPromise, AxiosRequestConfig } from 'axios';
 
