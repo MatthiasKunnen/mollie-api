@@ -1,6 +1,6 @@
 {
     "name": "mollie-api",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A promise based wrapper around the Mollie API written in TypeScript",
     "author": "Matthias Kunnen",
     "main": "dist/index.js",
