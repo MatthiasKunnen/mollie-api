@@ -16,7 +16,7 @@ declare module 'mollie-api' {
         create(data: CustomerInput): AxiosPromise<CustomerResponse>;
         delete(customerId: string): AxiosPromise;
         get(customerId: string): AxiosPromise<CustomerResponse>;
-        list(paginate: PaginationInput): AxiosPromise<CustomerList>;
+        list(paginate?: PaginationInput): AxiosPromise<CustomerList>;
         update(customerId: string, data: CustomerInput): AxiosPromise<CustomerResponse>;
     }
 

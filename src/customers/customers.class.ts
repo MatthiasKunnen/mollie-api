@@ -2,7 +2,8 @@ import { AxiosInstance, AxiosPromise } from 'axios';
 
 import { PaginationInput } from '../mollie.interface';
 import {
-    CustomerInput, CustomerList,
+    CustomerInput,
+    CustomerList,
     CustomerResponse,
 } from './customers.interface';
 
@@ -26,7 +27,7 @@ export class Customers {
         return this.http.get('/customers/' + customerId);
     }
 
-    list(paginate: PaginationInput): AxiosPromise<CustomerList> {
+    list(paginate?: PaginationInput): AxiosPromise<CustomerList> {
         return this.http.get('/customers', {params: paginate});
     }
 
