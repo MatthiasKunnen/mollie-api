@@ -8,6 +8,34 @@ The library is written in TypeScript and has typings available.
 This library is promise based and does not try to do some overly cumbersome
 parsing on the data returned from the Mollie API.
 
+# Create mollie instance
+```TypeScript
+import { Mollie } from 'mollie-api';
+const mollie = new Mollie({
+    apiKey: 'your live or test API key here',
+});
+```
+
+The first parameter is a library specific config. The options can be found in
+the MollieConfig interface.
+
+```TypeScript
+/**
+ * Your live or test API key.
+ */
+apiKey: string;
+
+/**
+ * @default https://api.mollie.com/
+ */
+endpoint?: string;
+
+/**
+ * @default v1
+ */
+version?: string;
+```
+
 # Currently implemented
 
 ## Customers
@@ -22,17 +50,23 @@ mollie.customers.create({
 
 ### Delete
 ```TypeScript
-mollie.customers.delete('theID').then(d => console.log('success')).catch(console.error);
+mollie.customers.delete('theID')
+    .then(d => console.log('success'))
+    .catch(console.error);
 ```
 
 ### Get
 ```TypeScript
-mollie.customers.get('theID').then(d => console.log(d.data)).catch(console.error);
+mollie.customers.get('theID')
+    .then(d => console.log(d.data))
+    .catch(console.error);
 ```
 
 ### List
 ```TypeScript
-mollie.customers.list().then(d => console.log(d.data)).catch(console.error);
+mollie.customers.list()
+    .then(d => console.log(d.data))
+    .catch(console.error);
 ```
 
 ### Update
