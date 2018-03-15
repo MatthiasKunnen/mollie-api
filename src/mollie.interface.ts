@@ -38,3 +38,7 @@ export interface PaginationLinks {
 
 export type Status =
     'pending' | 'active' | 'cancelled' | 'suspended' | 'completed';
+
+export interface Metadata {
+    [k: string]: string;
+}

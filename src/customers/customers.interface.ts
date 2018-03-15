@@ -1,10 +1,10 @@
-import { PaginationLinks } from '../mollie.interface';
+import { Metadata, PaginationLinks } from '../mollie.interface';
 
 export interface CustomerInput {
     name?: string;
     email?: string;
     locale?: string;
-    metadata?: {[k: string]: string};
+    metadata?: Metadata;
     testmode?: boolean;
 }
 
@@ -15,7 +15,7 @@ export interface CustomerResponse {
     name: string | null;
     email: string | null;
     locale: string | null;
-    metadata?: {[k: string]: string} | null;
+    metadata?: Metadata | null;
     /**
      * Payment methods that the customer recently used for payments.
      */
