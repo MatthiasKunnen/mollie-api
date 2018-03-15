@@ -38,6 +38,28 @@ version?: string;
 
 # Currently implemented
 
+## Payments
+
+### Create
+```TypeScript
+mollie.payments.create({
+    amount: 100,
+    description: 'As a token of appreciation for the development of this library',
+    redirectUrl: 'https://example.com/payment',
+    webhookUrl: 'https://api.example.com/mollie/payment',
+})
+    .then(d => console.log(d.data))
+    .catch(e => console.error(e.response.data));
+```
+
+### Get
+```TypeScript
+mollie.payments.get('tr_id')
+    .then(d => console.log(d.data))
+    .catch(e => console.error(e.response.data));
+```
+
+
 ## Customers
 
 ### Create
