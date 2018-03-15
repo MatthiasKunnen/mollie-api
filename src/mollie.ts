@@ -2,10 +2,12 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 import { Customers } from './customers/customers.class';
 import { MollieConfig } from './mollie.interface';
+import { Subscriptions } from './subscriptions/subscriptions.class';
 
 export class Mollie {
 
     customers: Customers;
+    subscriptions: Subscriptions;
 
     private http: AxiosInstance;
 
@@ -38,5 +40,6 @@ export class Mollie {
         });
 
         this.customers = new Customers(this.http);
+        this.subscriptions = new Subscriptions(this.http);
     }
 }

@@ -76,3 +76,37 @@ mollie.customers.update('theID', {
     email: 'email@example.com',
 }).then(d => console.log(d.data)).catch(console.error);
 ```
+
+## Subscriptions
+
+### Create
+```TypeScript
+mollie.subscriptions.create('customerId', {
+    amount: 200,
+    description: 'A test payment',
+    interval: '1 month',
+    times: 3,
+}).then(c => console.log(c.data))
+    .catch(err => console.log(err.response.data));
+```
+
+### Get
+```TypeScript
+mollie.subscriptions.get('customerId', 'subscriptionId')
+    .then(c => console.log(c.data))
+    .catch(err => console.log(err.response.data));
+```
+
+### List
+```TypeScript
+mollie.subscriptions.get('customerId')
+    .then(c => console.log(c.data))
+    .catch(err => console.log(err.response.data));
+```
+
+### Cancel
+```TypeScript
+mollie.subscriptions.cancel('customerId', 'subscriptionId')
+    .then(c => console.log(c.data))
+    .catch(err => console.log(err.response.data));
+```

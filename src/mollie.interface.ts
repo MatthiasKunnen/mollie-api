@@ -35,3 +35,6 @@ export interface PaginationLinks {
     first: string | null;
     last: string | null;
 }
+
+export type Status =
+    'pending' | 'active' | 'cancelled' | 'suspended' | 'completed';
