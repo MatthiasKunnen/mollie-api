@@ -121,7 +121,7 @@ mollie.subscriptions.get('customerId', 'subscriptionId')
 
 ### List
 ```TypeScript
-mollie.subscriptions.get('customerId')
+mollie.subscriptions.list('customerId')
     .then(c => console.log(c.data))
     .catch(err => console.log(err.response.data));
 ```
