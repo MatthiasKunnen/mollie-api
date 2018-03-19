@@ -3,9 +3,53 @@ declare module 'mollie-api' {
 
     export class Mollie {
         customers: Customers;
+        mandates: Mandates;
         payments: Payments;
         subscriptions: Subscriptions;
         constructor(config: MollieConfig, axiosConfig?: Partial<AxiosRequestConfig>);
+    }
+
+    /**
+     * This class takes care of all mandate methods.
+     */
+    export class Mandates {
+        private http;
+        constructor(http: AxiosInstance);
+        get(customerId: string, mandateId: string): AxiosPromise<MandateResponse>;
+        list(customerId: string, paginate?: PaginationInput): AxiosPromise<MandateList>;
+        /**
+         * Creates a URL to hit based on customer ID and optional mandate ID.
+         */
+        private url(customerId, mandateId?);
+    }
+    export interface MandateResponse {
+        resource: 'mandate';
+        id: string;
+        status: string;
+        method: string;
+        customerId: string;
+        details: {
+            [k: string]: any;
+        } | null;
+        /**
+         * The mandate's custom reference, if this was provided when creating the mandate.
+         */
+        mandateReference?: string;
+        /**
+         * The signature date of the mandate in YYYY-MM-DD format.
+         */
+        signatureDate?: string;
+        /**
+         * The mandate record's date and time of creation, in ISO 8601 format.
+         */
+        createdDatetime: string;
+    }
+    export interface MandateList {
+        totalCount: number;
+        offset: number;
+        count: number;
+        data: Array<MandateResponse>;
+        links?: PaginationLinks;
     }
 
     /**

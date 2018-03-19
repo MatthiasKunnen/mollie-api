@@ -99,6 +99,22 @@ mollie.customers.update('theID', {
 }).then(d => console.log(d.data)).catch(console.error);
 ```
 
+## Mandates
+
+### Get
+```TypeScript
+mollie.mandates.get('customerId', 'subscriptionId')
+    .then(c => console.log(c.data))
+    .catch(err => console.log(err.response.data));
+```
+
+### List
+```TypeScript
+mollie.mandates.list('customerId')
+    .then(c => console.log(c.data))
+    .catch(err => console.log(err.response.data));
+```
+
 ## Subscriptions
 
 ### Create

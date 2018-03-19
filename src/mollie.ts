@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 import { Customers } from './customers/customers.class';
+import { Mandates } from './mandates/madates.class';
 import { MollieConfig } from './mollie.interface';
 import { Payments } from './payments/payments.class';
 import { Subscriptions } from './subscriptions/subscriptions.class';
@@ -8,6 +9,7 @@ import { Subscriptions } from './subscriptions/subscriptions.class';
 export class Mollie {
 
     customers: Customers;
+    mandates: Mandates;
     payments: Payments;
     subscriptions: Subscriptions;
 
@@ -42,6 +44,7 @@ export class Mollie {
         });
 
         this.customers = new Customers(this.http);
+        this.mandates = new Mandates(this.http);
         this.payments = new Payments(this.http);
         this.subscriptions = new Subscriptions(this.http);
     }
