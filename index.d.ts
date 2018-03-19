@@ -131,9 +131,9 @@ declare module 'mollie-api' {
          */
         failureReason?: string;
         links: {
-            paymentUrl: string;
-            webhookUrl: string;
-            redirectUrl: string;
+            paymentUrl: string | null;
+            webhookUrl?: string;
+            redirectUrl: string | null;
             settlement?: string;
             refunds?: string;
             chargebacks?: string;
